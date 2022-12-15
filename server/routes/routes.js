@@ -8,4 +8,5 @@ router.post('/customer', CustomerController.createCustomer)
 router.get('/customer/:id', CustomerController.getCustomerById)
 router.get('/customers', CustomerController.getCustomers)
 
+
 module.exports = router

@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
 const loanSchema = new mongoose.Schema({
     customer: {
@@ -10,7 +10,7 @@ const loanSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
-    simpleInterest: {
+    interestRate: {
         type: Number,
         required: true
     },
@@ -26,7 +26,6 @@ const loanSchema = new mongoose.Schema({
         type: Date,
         required: true
     }
-
-})
+});
 
 module.exports = mongoose.model('Loan', loanSchema);

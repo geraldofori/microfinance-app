@@ -1,4 +1,6 @@
 const mongoose = require("mongoose");
+const bcrypt = require("bcrypt")
+
 
 const customerSchema = new mongoose.Schema({
     firstName: {
@@ -46,6 +48,31 @@ const customerSchema = new mongoose.Schema({
         required: [true, "Please provide a phone number"],
         unique: [true, "Phone number already exists with a customer"]
     },
+})
+
+customerSchema.pre("save", function (next) {
+    const customer = this
+
+    if (this.isModified("password") || this.isNew) {
+        bcrypt.genSalt(10, function (saltError, salt) {
+            if (saltError) {
+                return next(saltError)
+            } else {
+                bcrypt.hash(customer.password, salt, function(hashError, hash) {
+                    if (hashError) {
+                        return next(hashError)
+                    }
+
+                    customer.password = hash
+                    next()
+                })
+            }
+        })
+    } else {
+
+
+        return next()
+    }
 })
 
 module.exports = mongoose.model('Customer', customerSchema);

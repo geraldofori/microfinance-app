@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const CustomerSchema = new mongoose.Schema({
+const customerSchema = new mongoose.Schema({
     firstName: {
         type: String,
         required: [true, "Please provide a first Name"],
@@ -15,7 +15,6 @@ const CustomerSchema = new mongoose.Schema({
         type: String,
         required: [true, "Please provide a marital status"],
         unique: false,
-
     },
     employmentStatus: {
         type: String,
@@ -49,4 +48,4 @@ const CustomerSchema = new mongoose.Schema({
     },
 })
 
-module.exports = mongoose.model.Customers || mongoose.model("Customer", CustomerSchema);
+module.exports = mongoose.model('Customer', customerSchema);

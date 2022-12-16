@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cc01ec8e-353d-45f4-abfc-67e8aaac5521" name="Changes" comment="added new routes and simple interest logic">
-      <change afterPath="$PROJECT_DIR$/server/models/loan.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="cc01ec8e-353d-45f4-abfc-67e8aaac5521" name="Changes" comment="added a loan schema and restructured the customer schema">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/App.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/auth/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/register.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/auth/register.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +45,11 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/client/src/components/auth" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -54,7 +61,7 @@
       <workItem from="1671101582230" duration="1354000" />
       <workItem from="1671102960055" duration="4868000" />
       <workItem from="1671114615001" duration="416000" />
-      <workItem from="1671176631503" duration="737000" />
+      <workItem from="1671176631503" duration="1208000" />
     </task>
     <task id="LOCAL-00001" summary="new controller, routes, server">
       <created>1671105332831</created>
@@ -77,7 +84,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671114647378</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="added a loan schema and restructured the customer schema">
+      <created>1671177608271</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1671177608271</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -90,6 +104,7 @@
     <MESSAGE value="new controller, routes, server" />
     <MESSAGE value="created the client with react" />
     <MESSAGE value="added new routes and simple interest logic" />
-    <option name="LAST_COMMIT_MESSAGE" value="added new routes and simple interest logic" />
+    <MESSAGE value="added a loan schema and restructured the customer schema" />
+    <option name="LAST_COMMIT_MESSAGE" value="added a loan schema and restructured the customer schema" />
   </component>
 </project>

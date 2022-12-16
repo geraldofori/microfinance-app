@@ -11,25 +11,26 @@ const customerSchema = new mongoose.Schema({
         required: [true, "Please provide a last Name!"],
         unique: false,
     },
+    email: {
+        type: String,
+        required: [true, "Please provide a valid email"],
+        unique: [true, "Email already registered under account"]
+    },
     maritalStatus: {
         type: String,
         required: [true, "Please provide a marital status"],
-        unique: false,
     },
     employmentStatus: {
         type: String,
         required: [true, "Please provide a employment status"],
-        unique: false,
     },
     nameOfEmployer: {
         type: String,
         required: [true, "Please provide name of Employer"],
-        unique: false
     },
     dateOfBirth: {
         type: Date,
         required: [true, "Please provide a date of birth"],
-        unique: false,
     },
     cardType: {
         type: String,
@@ -39,7 +40,6 @@ const customerSchema = new mongoose.Schema({
     address: {
         type: String,
         required: [true, "Please provide an address!"],
-        unique: false,
     },
     phoneNumber: {
         type: Number,

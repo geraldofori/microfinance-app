@@ -1,16 +1,16 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
-import Register from "./components/auth/register";
-import Login from "./components/auth/login";
-import TakeLoan from "./components/customer/takeLoan";
+import Register from "./components/auth/Register";
+import Login from "./components/auth/Login";
+import TakeLoan from "./components/customer/TakeLoan";
 
 function App() {
   return (
       <Router>
         <Routes>
-            <Route path="/" exact component={Login} />
-            <Route path="/register" exact component={Register} />
-            <Route path="/login" exact component={Login} />
-            <Route path="/takeLoan" exact component={TakeLoan} />
+            <Route path="/" element={<Login/>} />
+            <Route path="/register" element={<Register/>} />
+            <Route path="/login" element={<Login/>} />
+            <Route path="/takeLoan" element={<TakeLoan/>} />
         </Routes>
       </Router>
   );

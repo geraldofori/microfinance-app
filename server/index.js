@@ -2,7 +2,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const cors = require('cors')
 const app = express()
-const apiPort = 3001
+const apiPort = 3005
 
 const db = require('./db')
 const routes = require('./routes/routes')

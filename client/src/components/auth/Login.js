@@ -11,7 +11,7 @@ export default function Login() {
                             <Card.Body>
                                 <div className="mb-3 mt-md-4">
                                     <h2 className="fw-bold mb-2 text-center text-uppercase ">
-                                        Logo
+                                        Microfinance | Customer Login
                                     </h2>
                                     <div className="mb-3">
                                         <Form>
@@ -35,7 +35,7 @@ export default function Login() {
                                         <div className="mt-3">
                                             <p className="mb-0  text-center">
                                                 Don't have an account?{' '}
-                                                <a href="client/src/components#" className="text-primary fw-bold">
+                                                <a href="/register" className="text-primary fw-bold">
                                                     Register
                                                 </a>
                                             </p>

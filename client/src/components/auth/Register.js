@@ -11,54 +11,50 @@ export default function Register() {
                             <Card.Body>
                                 <div className="mb-3 mt-md-4">
                                     <h2 className="fw-bold mb-2 text-center text-uppercase ">
-                                        Logo
+                                        Microfinance | Customer Sign up
                                     </h2>
                                     <div className="mb-3">
                                         <Form>
                                             <Form.Group className="mb-3" controlId="firstName">
                                                 <Form.Label className="text-center">First Name</Form.Label>
-                                                <Form.Control type="text" placeholder="Enter Name" />
+                                                <Form.Control type="text" placeholder="" />
                                             </Form.Group>
 
                                             <Form.Group className="mb-3" controlId="lastName">
                                                 <Form.Label className="text-center">Last Name</Form.Label>
-                                                <Form.Control type="text" placeholder="Enter Name" />
+                                                <Form.Control type="text" placeholder="" />
                                             </Form.Group>
 
-                                            <Form.Group className="mb-3" controlId="formBasicEmail">
+                                            <Form.Group className="mb-3" controlId="email">
                                                 <Form.Label className="text-center">
                                                     Email address
                                                 </Form.Label>
-                                                <Form.Control type="email" placeholder="Enter email" />
+                                                <Form.Control type="email" placeholder="" />
                                             </Form.Group>
 
-                                            <Form.Group className="mb-3" controlId="Name">
+                                            <Form.Group className="mb-3" controlId="mStatus">
                                                 <Form.Label className="text-center">Marital Status</Form.Label>
-                                                <Form.Control type="text" placeholder="Enter Name" />
+                                                <Form.Control type="text" placeholder="" />
                                             </Form.Group>
 
-                                            <Form.Group className="mb-3" controlId="Name">
+                                            <Form.Group className="mb-3" controlId="eStatus">
                                                 <Form.Label className="text-center">Employment Status</Form.Label>
-                                                <Form.Control type="text" placeholder="Enter Name" />
+                                                <Form.Control type="text" placeholder="" />
                                             </Form.Group>
 
-                                            <Form.Group className="mb-3" controlId="Name">
+                                            <Form.Group className="mb-3" controlId="NOE">
                                                 <Form.Label className="text-center">Name of Employer</Form.Label>
-                                                <Form.Control type="text" placeholder="Enter Name" />
+                                                <Form.Control type="text" placeholder="" />
                                             </Form.Group>
 
-                                            <Form.Group className="mb-3" controlId="Name">
+                                            <Form.Group className="mb-3" controlId="dob">
                                                 <Form.Label className="text-center">Date of Birth</Form.Label>
-                                                <Form.Control type="text" placeholder="Enter Name" />
+                                                <Form.Control type="text" placeholder="" />
                                             </Form.Group>
 
-                                            <Form.Group className="mb-3" controlId="Name">
+                                            <Form.Group className="mb-3" controlId="number">
                                                 <Form.Label className="text-center">Phone Number</Form.Label>
-                                                <Form.Control type="text" placeholder="Enter Name" />
-                                            </Form.Group>
-                                            <Form.Group className="mb-3" controlId="Name">
-                                                <Form.Label className="text-center">Name</Form.Label>
-                                                <Form.Control type="text" placeholder="Enter Name" />
+                                                <Form.Control type="number" placeholder="" />
                                             </Form.Group>
 
                                             <Form.Group

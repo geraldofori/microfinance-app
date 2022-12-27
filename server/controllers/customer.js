@@ -13,7 +13,7 @@ createCustomer = (req, res) => {
     const customer = new Customer(body)
 
     if (!customer) {
-        return res.status(400).json({ success: false, error: err })
+        return res.status(400).json({ success: false, error: 'Cannot create new customer' })
     }
 
     customer
@@ -35,7 +35,9 @@ createCustomer = (req, res) => {
 
 
 getCustomer =  (req, res) => {
-    Customer.findOne({email: req.email}, (error, customer) => {
+    const { email, password } = req.body;
+
+    Customer.findOne({email}, (error, customer) => {
         if (error) {
             res.status(500).send(error);
         } else if (!customer) {

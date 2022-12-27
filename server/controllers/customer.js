@@ -34,19 +34,20 @@ createCustomer = (req, res) => {
 }
 
 
-getCustomerById = async (req, res) => {
-    await Customer.findOne({ _id: req.params.id }, (err, customer) => {
-        if (err) {
-            return res.status(400).json({ success: false, error: err })
+getCustomer =  (req, res) => {
+    Customer.findOne({email: req.email}, (error, customer) => {
+        if (error) {
+            res.status(500).send(error);
+        } else if (!customer) {
+            res.status(404).send('User not found');
+        } else {
+            if (customer.password === password) {
+                res.send('Successfully logged in');
+            } else {
+                res.send('Incorrect password');
+            }
         }
-
-        if (!customer) {
-            return res
-                .status(404)
-                .json({ success: false, error: `Customer not found` })
-        }
-        return res.status(200).json({ success: true, data: customer })
-    }).catch(err => console.log(err))
+    });
 }
 
 getCustomers = async (req, res) => {
@@ -66,5 +67,5 @@ getCustomers = async (req, res) => {
 module.exports = {
     createCustomer,
     getCustomers,
-    getCustomerById,
+    getCustomer,
 }

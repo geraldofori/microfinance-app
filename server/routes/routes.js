@@ -5,8 +5,8 @@ const LoanController = require('../controllers/loan')
 
 const router = express.Router()
 
-router.post('/customer', CustomerController.createCustomer)
-router.get('/customer/:id', CustomerController.getCustomerById)
+router.post('/register', CustomerController.createCustomer)
+router.post('/login', CustomerController.getCustomer)
 router.get('/customers', CustomerController.getCustomers)
 router.post('/loans', LoanController.addNewLoan);
 

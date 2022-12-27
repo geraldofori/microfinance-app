@@ -1,24 +1,31 @@
 import React from "react";
-import {Button, Card, Col, Container, Row} from "react-bootstrap";
+import { Container, Nav, Navbar, NavItem} from "react-bootstrap";
+
+
+const SideNav = () => {
+    return (
+        <Navbar>
+            <Navbar.Collapse>
+                <Nav>
+                    <NavItem href="#">Home</NavItem>
+                    <NavItem href="#">Profile</NavItem>
+                    <NavItem href="#">Reports</NavItem>
+                    <NavItem href="#">Settings</NavItem>
+                </Nav>
+            </Navbar.Collapse>
+        </Navbar>
+    );
+};
+
 
 export default function Dashboard(){
     return(
         <div>
-            <Container>
-                <Row className="vh-100 d-flex justify-content-center align-items-center">
-                    <Col md={8} lg={6} xs={12}>
-                        <Card className="px-4">
-                            <Card.Body>
-                                <div className="mb-3 mt-md-4">
-                                    <h2 className="fw-bold mb-2 text-center text-uppercase ">
-                                        All Loans
-                                    </h2>
-                                </div>
-                            </Card.Body>
-                        </Card>
-                    </Col>
-                </Row>
-            </Container>
+            {/*<Container>*/}
+                <SideNav/>
+                <h1>Welcome to the dashboard!</h1>
+                <p>Here you can view and manage your data.</p>
+            {/*</Container>*/}
         </div>
 
     )

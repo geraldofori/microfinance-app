@@ -17,12 +17,12 @@ export default function Login() {
                                         <Form>
                                             <Form.Group className="mb-3" controlId="email">
                                                 <Form.Label className="text-center">Email</Form.Label>
-                                                <Form.Control type="text" placeholder="Enter Name" />
+                                                <Form.Control type="email" placeholder="name@example.com" />
                                             </Form.Group>
 
                                             <Form.Group className="mb-3" controlId="password">
                                                 <Form.Label className="text-center">Password</Form.Label>
-                                                <Form.Control type="text" placeholder="Enter Name" />
+                                                <Form.Control type="password" placeholder="Enter Password" />
                                             </Form.Group>
 
 

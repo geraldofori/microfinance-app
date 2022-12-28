@@ -21,5 +21,5 @@ getAdmin =  (req, res) => {
 
 
 module.exports = {
-    getAdmin,
+    getAdmin
 }

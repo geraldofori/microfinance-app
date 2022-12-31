@@ -10,3 +10,7 @@ MongoClient.connect(uri, { useNewUrlParser: true }, (err, client) => {
         console.log("Connected to MongoDB!");
     }
 });
+
+module.exports = {
+    uri
+};

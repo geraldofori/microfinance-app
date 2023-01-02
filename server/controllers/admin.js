@@ -4,7 +4,7 @@ const Admin = require('../models/admin')
 getAdmin =  (req, res) => {
     const { email, password } = req.body;
 
-    Admin.findOne({email}, (error, admin) => {
+    Admin.findOne({email},"email password", (error, admin) => {
         if (error) {
             res.status(500).send(error);
         } else if (!admin) {

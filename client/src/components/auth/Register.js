@@ -1,7 +1,55 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Col, Button, Row, Container, Card, Form } from 'react-bootstrap';
+import Axios from 'axios'
 
 export default function Register() {
+
+    const [firstName, setFirstName]= useState('');
+    const [lastName, setLastName] = useState('');
+    const [email, setEmail]= useState('');
+    const [password, setPassword] = useState('');
+    const [maritalStatus, setMaritalStatus]= useState('');
+    const [employmentStatus, setEmploymentStatus] = useState('');
+    const [nameOfEmployer, setNameOfEmployer] = useState('')
+    const [dateOfBirth, setDateOfBirth] = useState('');
+    const [address, setAddress] = useState('');
+    const [cardType, setCardType] = useState('');
+    const [phoneNumber, setPhoneNumber] = useState('');
+
+
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+
+        const formData = {
+            firstname: firstName,
+            lastName: lastName,
+            email: email,
+            password: password,
+            maritalStatus: maritalStatus,
+            employmentStatus: employmentStatus,
+            nameOfEmployer: nameOfEmployer,
+            dateOfBirth: dateOfBirth,
+            cardType: cardType,
+            address: address,
+            phoneNumber: phoneNumber
+        }
+
+        Axios.post('http://localhost:3005/admin/login', {
+            email: email,
+            password: password
+        })
+            .then(response => {
+                console.log('Successful login');
+                if(response.status === 200){
+                    window.location.href = '/dashboard';
+                }
+            })
+            .catch(error => {
+                console.log('Unsuccessful login');
+            });
+    }
+
     return (
         <div>
             <Container>
@@ -14,27 +62,42 @@ export default function Register() {
                                         Microfinance | Customer Sign up
                                     </h2>
                                     <div className="mb-3">
-                                        <Form>
+                                        <Form onSubmit={handleSubmit}>
                                             <Form.Group className="mb-3" controlId="firstName">
                                                 <Form.Label className="text-center">First Name</Form.Label>
-                                                <Form.Control type="text" placeholder="" />
+                                                <Form.Control
+                                                    type="text"
+                                                    placeholder=""
+                                                    value={firstName}
+                                                    onChange={e => setFirstName(e.target.value)}
+                                                />
                                             </Form.Group>
 
                                             <Form.Group className="mb-3" controlId="lastName">
                                                 <Form.Label className="text-center">Last Name</Form.Label>
-                                                <Form.Control type="text" placeholder="" />
+                                                <Form.Control
+                                                    type="text"
+                                                    placeholder=""
+                                                    value={lastName}
+                                                    onChange={e => setLastName(e.target.value)}
+                                                />
                                             </Form.Group>
 
                                             <Form.Group className="mb-3" controlId="email">
                                                 <Form.Label className="text-center">
                                                     Email address
                                                 </Form.Label>
-                                                <Form.Control type="email" placeholder="" />
+                                                <Form.Control
+                                                    type="email"
+                                                    placeholder=""
+                                                    value={email}
+                                                    onChange={e => setEmail(e.target.value)}
+                                                />
                                             </Form.Group>
 
                                             <Form.Group className="mb-3" controlId="mStatus">
                                                 <Form.Label className="text-center">Marital Status</Form.Label>
-                                                <Form.Control type="text" placeholder="" />
+
                                             </Form.Group>
 
                                             <Form.Group className="mb-3" controlId="eStatus">
@@ -44,7 +107,12 @@ export default function Register() {
 
                                             <Form.Group className="mb-3" controlId="NOE">
                                                 <Form.Label className="text-center">Name of Employer</Form.Label>
-                                                <Form.Control type="text" placeholder="" />
+                                                <Form.Control
+                                                    type="text"
+                                                    placeholder=""
+                                                    value={nameOfEmployer}
+                                                    onChange={e => setNameOfEmployer(e.target.value)}
+                                                />
                                             </Form.Group>
 
                                             <Form.Group className="mb-3" controlId="dob">
@@ -54,7 +122,12 @@ export default function Register() {
 
                                             <Form.Group className="mb-3" controlId="number">
                                                 <Form.Label className="text-center">Phone Number</Form.Label>
-                                                <Form.Control type="number" placeholder="" />
+                                                <Form.Control
+                                                    type="number"
+                                                    placeholder=""
+                                                    value={phoneNumber}
+                                                    onChange={e => setPhoneNumber(e.target.value)}
+                                                />
                                             </Form.Group>
 
                                             <Form.Group
@@ -66,15 +139,12 @@ export default function Register() {
                                             </Form.Group>
                                             <Form.Group
                                                 className="mb-3"
-                                                controlId="formBasicPassword"
+                                                controlId="formBasicConfirmPassword"
                                             >
                                                 <Form.Label>Confirm Password</Form.Label>
                                                 <Form.Control type="password" placeholder="Password" />
                                             </Form.Group>
-                                            <Form.Group
-                                                className="mb-3"
-                                                controlId="formBasicCheckbox"
-                                            ></Form.Group>
+                                            
                                             <div className="d-grid">
                                                 <Button variant="primary" type="submit">
                                                     Create Account

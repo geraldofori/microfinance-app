@@ -5,17 +5,19 @@ const customerSchema = new mongoose.Schema({
     firstName: {
         type: String,
         required: [true, "Please provide a first Name"],
-        unique: false,
     },
     lastName: {
         type: String,
         required: [true, "Please provide a last Name!"],
-        unique: false,
     },
     email: {
         type: String,
         required: [true, "Please provide a valid email"],
         unique: [true, "Email already registered under account"]
+    },
+    password: {
+        type: String,
+        required: [true, "Please provide a password"],
     },
     maritalStatus: {
         type: String,

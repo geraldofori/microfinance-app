@@ -17,6 +17,9 @@ export default function Login() {
         })
             .then(response => {
                 console.log('Successful login');
+                if(response.status == 200){
+                    window.location.href = '/dashboard';
+                }
             })
             .catch(error => {
                 console.log('Unsuccessful login');

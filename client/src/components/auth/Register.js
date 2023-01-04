@@ -105,6 +105,17 @@ export default function Register() {
                                                 />
                                             </Form.Group>
 
+                                            <Form.Group className="mb-3" controlId="dateOfBirth">
+                                                <Form.Label className="text-center">Date Of Birth</Form.Label>
+                                                <Form.Control
+                                                    type="date"
+                                                    placeholder=""
+                                                    value={dateOfBirth}
+                                                    onChange={e => setDateOfBirth(e.target.value)}
+                                                />
+                                            </Form.Group>
+
+
                                             <Form.Group className="mb-3" controlId="mStatus">
                                                 <Form.Label className="text-center">Marital Status</Form.Label>
 
@@ -115,7 +126,12 @@ export default function Register() {
                                                 <Form.Control type="text" placeholder="" />
                                             </Form.Group>
 
-                                            <Form.Group className="mb-3" controlId="NOE">
+                                            <Form.Group className="mb-3" controlId="cardType">
+                                                <Form.Label className="text-center">Card Type</Form.Label>
+                                                <Form.Control type="text" placeholder="" />
+                                            </Form.Group>
+
+                                            <Form.Group className="mb-3" controlId="nameOfEmployer">
                                                 <Form.Label className="text-center">Name of Employer</Form.Label>
                                                 <Form.Control
                                                     type="text"
@@ -125,13 +141,8 @@ export default function Register() {
                                                 />
                                             </Form.Group>
 
-                                            <Form.Group className="mb-3" controlId="dob">
-                                                <Form.Label className="text-center">Date of Birth</Form.Label>
-                                                <Form.Control type="text" placeholder="" />
-                                            </Form.Group>
-
                                             <Form.Group className="mb-3" controlId="address">
-                                                <Form.Label className="text-center">Date of Birth</Form.Label>
+                                                <Form.Label className="text-center">Address</Form.Label>
                                                 <Form.Control
                                                     type="text"
                                                     placeholder=""

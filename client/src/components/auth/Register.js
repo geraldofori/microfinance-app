@@ -15,11 +15,24 @@ export default function Register() {
     const [address, setAddress] = useState('');
     const [cardType, setCardType] = useState('');
     const [phoneNumber, setPhoneNumber] = useState(0);
+    const [error, setError] = useState('')
 
 
 
     const handleSubmit = (event) => {
         event.preventDefault();
+
+            const password1 = event.target.elements.formPassword1.value;
+            const password2 = event.target.elements.formPassword2.value;
+
+            if (password1 !== password2) {
+                setError('Passwords do not match');
+            } else {
+                setError('');
+                setPassword(password1);
+
+            }
+
 
         const formData = {
             firstname: firstName,
@@ -117,6 +130,16 @@ export default function Register() {
                                                 <Form.Control type="text" placeholder="" />
                                             </Form.Group>
 
+                                            <Form.Group className="mb-3" controlId="address">
+                                                <Form.Label className="text-center">Date of Birth</Form.Label>
+                                                <Form.Control
+                                                    type="text"
+                                                    placeholder=""
+                                                    value={address}
+                                                    onChange={e => setAddress(e.target.value)}
+                                                />
+                                            </Form.Group>
+
                                             <Form.Group className="mb-3" controlId="number">
                                                 <Form.Label className="text-center">Phone Number</Form.Label>
                                                 <Form.Control
@@ -129,18 +152,20 @@ export default function Register() {
 
                                             <Form.Group
                                                 className="mb-3"
-                                                controlId="formBasicPassword"
+                                                controlId="formPassword1"
                                             >
                                                 <Form.Label>Password</Form.Label>
                                                 <Form.Control type="password" placeholder="Password" />
                                             </Form.Group>
                                             <Form.Group
                                                 className="mb-3"
-                                                controlId="formBasicConfirmPassword"
+                                                controlId="formPassword2"
                                             >
                                                 <Form.Label>Confirm Password</Form.Label>
                                                 <Form.Control type="password" placeholder="Password" />
                                             </Form.Group>
+
+                                            <p style={{ color: 'red' }}>{error}</p>
 
                                             <div className="d-grid">
                                                 <Button variant="primary" type="submit">

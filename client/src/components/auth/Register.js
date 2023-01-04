@@ -14,7 +14,7 @@ export default function Register() {
     const [dateOfBirth, setDateOfBirth] = useState('');
     const [address, setAddress] = useState('');
     const [cardType, setCardType] = useState('');
-    const [phoneNumber, setPhoneNumber] = useState('');
+    const [phoneNumber, setPhoneNumber] = useState(0);
 
 
 
@@ -35,18 +35,15 @@ export default function Register() {
             phoneNumber: phoneNumber
         }
 
-        Axios.post('http://localhost:3005/admin/login', {
-            email: email,
-            password: password
-        })
+        Axios.post('http://localhost:3005/register', formData)
             .then(response => {
-                console.log('Successful login');
+                console.log('Successfully registered user');
                 if(response.status === 200){
                     window.location.href = '/dashboard';
                 }
             })
             .catch(error => {
-                console.log('Unsuccessful login');
+                console.log('Unsuccessful registration');
             });
     }
 
@@ -124,9 +121,9 @@ export default function Register() {
                                                 <Form.Label className="text-center">Phone Number</Form.Label>
                                                 <Form.Control
                                                     type="number"
-                                                    placeholder=""
+                                                    placeholder="xxxxxxxxxx"
                                                     value={phoneNumber}
-                                                    onChange={e => setPhoneNumber(e.target.value)}
+                                                    onChange={e => setPhoneNumber(parseInt(e.target.value, 10))}
                                                 />
                                             </Form.Group>
 
@@ -144,7 +141,7 @@ export default function Register() {
                                                 <Form.Label>Confirm Password</Form.Label>
                                                 <Form.Control type="password" placeholder="Password" />
                                             </Form.Group>
-                                            
+
                                             <div className="d-grid">
                                                 <Button variant="primary" type="submit">
                                                     Create Account
